@@ -8,7 +8,29 @@ Modern LiDAR-based 3D object detection operates on increasingly dense point clou
 
 ## Results
 
-TODO
+Below we present the main results of our study. A more comprehensive analysis is available on a dedicated page containing the full set of results (TODO LINK). Further details and discussion can also be found in our paper (TODO LINK).
+
+### nuScenes dataset analysis
+
+<img src="figs/bg_fg_proportions_plot_horizontal.svg" width="50%" />
+
+<em>Distribution of foreground and background point proportions across semantic classes in the nuScenes dataset.</em>
+
+### 3D object detection analysis
+
+<table> <thead> <tr> <th>Model</th> <th>mAP</th> <th>NDS</th> <th>GFLOPS</th> <th>Mem (GB)</th> <th>FPS@1</th> <th>FPS@5</th> <th>CO₂ (g)</th> </tr> </thead> <tbody> <tr> <td>BEVFusion-L</td> <td>0.643</td> <td>0.691</td> <td>246.09</td> <td>2.81</td> <td>21.8</td> <td>38.6</td> <td>2.51</td> </tr> <tr> <td>BEVFusion-L<sup>*</sup></td> <td>0.672 (+4.5%)</td> <td>0.704 (+1.9%)</td> <td>185.67 (-24.6%)</td> <td>2.79 (-0.7%)</td> <td>26.8 (+22.8%)</td> <td>61.0 (+57.9%)</td> <td>1.69 (-32.6%)</td> </tr>
+
+<tr> <td>BEVFusion-L 3Dh</td> <td>0.639</td> <td>0.691</td> <td>230.48</td> <td>2.80</td> <td>17.2</td> <td>32.9</td> <td>3.10</td> </tr> <tr> <td>BEVFusion-L 3Dh<sup>*</sup></td> <td>0.666 (+4.3%)</td> <td>0.702 (+1.5%)</td> <td>113.65 (-50.7%)</td> <td>2.78 (-0.7%)</td> <td>22.1 (+28.1%)</td> <td>65.9 (+100.2%)</td> <td>1.58 (-49.0%)</td> </tr>
+
+<tr> <td>CenterPoint-Voxel</td> <td>0.557</td> <td>0.642</td> <td>163.53</td> <td>1.06</td> <td>14.5</td> <td>26.4</td> <td>3.27</td> </tr> <tr> <td>CenterPoint-Voxel<sup>*</sup></td> <td>0.612 (+10.0%)</td> <td>0.669 (+4.2%)</td> <td>121.62 (-25.6%)</td> <td>0.45 (-57.4%)</td> <td>17.2 (+18.1%)</td> <td>39.0 (+47.6%)</td> <td>1.54 (-52.9%)</td> </tr>
+
+<tr> <td>CenterPoint-Pillar</td> <td>0.482</td> <td>0.593</td> <td>127.86</td> <td>3.22</td> <td>22.0</td> <td>48.9</td> <td>2.59</td> </tr> <tr> <td>CenterPoint-Pillar<sup>*</sup></td> <td>0.576 (+19.5%)</td> <td>0.645 (+8.8%)</td> <td>127.25 (-0.5%)</td> <td>0.82 (-74.4%)</td> <td>34.5 (+56.9%)</td> <td>71.1 (+45.2%)</td> <td>1.40 (-46.0%)</td> </tr>
+
+<tr> <td>SSN</td> <td>0.461</td> <td>0.579</td> <td>237.34</td> <td>4.10</td> <td>9.3</td> <td>19.3</td> <td>9.29</td> </tr> <tr> <td>SSN<sup>*</sup></td> <td>0.558 (+21.1%)</td> <td>0.635 (+9.8%)</td> <td>231.96 (-2.3%)</td> <td>0.80 (-80.5%)</td> <td>20.9 (+124.4%)</td> <td>32.0 (+65.7%)</td> <td>2.01 (-78.4%)</td> </tr>
+
+<tr> <td>PointPillars</td> <td>0.391</td> <td>0.527</td> <td>130.15</td> <td>12.91</td> <td>11.4</td> <td>18.0</td> <td>9.96</td> </tr> <tr> <td>PointPillars<sup>*</sup></td> <td>0.503 (+28.8%)</td> <td>0.586 (+11.2%)</td> <td>112.92 (-13.2%)</td> <td>1.27 (-90.2%)</td> <td>27.7 (+143.5%)</td> <td>37.8 (+109.8%)</td> <td>1.84 (-81.5%)</td> </tr> </tbody> </table>
+
+<p><em>Performance results of the models. Values in parentheses indicate the percentage improvement over the unfiltered baseline. Models marked with <sup>*</sup> are trained and evaluated using filtered point clouds.</em></p>
 
 ## Reproducing our results
 
