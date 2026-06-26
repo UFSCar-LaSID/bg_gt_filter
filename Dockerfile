@@ -53,6 +53,10 @@ WORKDIR /mmdetection3d
 # Add the modified files for mmdet3d
 COPY ./bg_gt_filter/mmdet3d_modifications /mmdetection3d
 
+# Install other dependencies of the project
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
 # Instalar outras libs necessárias para rodar o SECOND
 RUN pip install cumm-cu113 && \
     pip install spconv-cu113 && \
