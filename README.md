@@ -36,9 +36,68 @@ Below we present the main results of our study. A more comprehensive analysis is
 
 TODO
 
-### 1. Libraries installation
+### 1. Packages Installation
 
-TODO
+To run the experiments, you must install MMDetection3D along with the required Python dependencies. There are two supported installation methods:
+
+1. Using Docker (recommended)
+2. Installing from source (without Docker)
+
+We strongly recommend using the Docker-based installation, as it provides a consistent environment and makes reproducing the experimental results significantly more reliable.
+
+#### Docker installation (recommended)
+
+Build the Docker image containing all the required dependencies by running:
+
+```
+docker build -t bg_gt_filter .
+```
+
+Once the image has been built, create a Docker container with the following command:
+
+```
+docker run --gpus all --shm-size=8g -it -d \
+    -v <nuscenes_path>:/mmdetection3d/data/nuscenes \
+    -v ./bg_gt_filter:/mmdetection3d/bg_gt_filter \
+    -v <models_path>:/mmdetection3d/models \
+    bg_gt_filter
+```
+
+Replace the placeholders as follows:
+
+* `<nuscenes_path>`: Path where the nuScenes dataset is (or will be) stored. If you have already downloaded the dataset, use its existing location.
+* `<models_path>`: Directory where the 3D object detection model checkpoints will be downloaded or generated.
+
+After creating the container, list the running containers to obtain its ID:
+
+```
+docker ps
+```
+
+Then attach to the container:
+
+```
+docker attach <container_id>
+```
+
+Once inside the container, you can proceed to the next steps.
+
+#### Installation without docker
+
+Alternatively, you can install MMDetection3D directly on your system. Follow the [official installation guide](https://mmdetection3d.readthedocs.io/en/latest/get_started.html) and install MMDetection3D from source.
+
+After completing the MMDetection3D installation, install the additional dependencies required by this project:
+
+```
+pip install -r requirements.txt
+```
+
+In this installation option:
+
+* `<nuscenes_path>` will be `<path_to_mmdet3d_installation>/data/nuscenes`
+* `<models_path>` will be `<path_to_mmdet3d_installation>/models`
+
+Once these dependencies have been installed, you can continue with the dataset preparation and experiment setup described in the following sections.
 
 ### 2. Dataset download and preparation
 
