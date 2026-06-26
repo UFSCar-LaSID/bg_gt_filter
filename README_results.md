@@ -1,5 +1,7 @@
 # Results
 
+All results obtained by our work is shown below. To reproduce these results, follow the instructions in the ["Reproducing our results" section of the main README](/#reproducing-our-results). Further details and discussion can also be found in our paper (TODO LINK).
+
 ## nuScenes dataset analysis
 
 ### Points class distribution
@@ -12,9 +14,22 @@
 
 <img src="figs/bg_proportions_box_plot.svg" width="50%" />
 
-<em></em>
+<em>Boxplots of background point proportions at frame and scene levels in the nuScenes dataset.</em>
 
 ### Outlier samples examples
+
+<table>
+<tr>
+<td><img src="figs/outlier_example_1.png" width="100%"></td>
+<td><img src="figs/outlier_example_2.png" width="100%"></td>
+</tr>
+<tr>
+<td><img src="figs/outlier_example_3.png" width="100%"></td>
+<td><img src="figs/outlier_example_4.png" width="100%"></td>
+</tr>
+</table>
+
+<em>Examples of outlier samples with low background proportions. In the bottom right image, a crowded traffic scene results in a high density of foreground points. In the other images, a large nearby vehicle occupies a significant portion of the LiDAR field of view.</em>
 
 ## 3D object detection analysis
 
@@ -32,10 +47,16 @@
 
 <tr> <td>PointPillars</td> <td>0.391</td> <td>0.527</td> <td>130.15</td> <td>12.91</td> <td>11.4</td> <td>18.0</td> <td>9.96</td> </tr> <tr> <td>PointPillars<sup>*</sup></td> <td>0.503 (+28.8%)</td> <td>0.586 (+11.2%)</td> <td>112.92 (-13.2%)</td> <td>1.27 (-90.2%)</td> <td>27.7 (+143.5%)</td> <td>37.8 (+109.8%)</td> <td>1.84 (-81.5%)</td> </tr> </tbody> </table>
 
-<p><em>Performance results of the models. Values in parentheses indicate the percentage improvement over the unfiltered baseline. Models marked with <sup>*</sup> are trained and evaluated using filtered point clouds.</em></p>
+<em>Performance results of the models. Values in parentheses indicate the percentage improvement over the unfiltered baseline. Models marked with <sup>*</sup> are trained and evaluated using filtered point clouds.</em>
+
+### Mantained BG (%) vs. Voxel size
+
+<img src="figs/bg_x_voxel_size_plot.svg" width="50%" />
+
+<em>Percentage of background points retained after voxel-based filtering as voxel size increases from 1x to 32x.</em>
 
 ### Model degradation by increasing levels of BG removal
 
 <img src="figs/delta_map_line_plot.svg" width="50%" />
 
-<em></em>
+<em>mAP degradation (ΔmAP) of detection models evaluated with different voxel size multipliers, which preserve increasing amounts of background information.</em>
