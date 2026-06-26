@@ -8,7 +8,7 @@ Modern LiDAR-based 3D object detection operates on increasingly dense point clou
 
 ## Results
 
-Below we present the main results of our study. A more comprehensive analysis is available on a dedicated page containing the full set of results (TODO LINK). Further details and discussion can also be found in our paper (TODO LINK).
+Below we present the main results of our study. A more comprehensive analysis is available on the [dedicated page containing the full set of results](README_results.md). Further details and discussion can also be found in our paper (TODO LINK).
 
 ### nuScenes dataset analysis
 
