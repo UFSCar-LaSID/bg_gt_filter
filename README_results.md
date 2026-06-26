@@ -1,6 +1,6 @@
 # Results
 
-All results obtained by our work is shown below. To reproduce these results, follow the instructions in the ["Reproducing our results" section of the main README](/README.md#reproducing-our-results). Further details and discussion can also be found in our paper (TODO LINK).
+All results obtained by our work is shown below. To reproduce these results, follow the instructions in the ["Reproducing our results" section of the main README](/#reproducing-our-results). Further details and discussion can also be found in our paper (TODO LINK).
 
 ## nuScenes dataset analysis
 
