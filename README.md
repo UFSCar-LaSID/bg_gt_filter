@@ -103,6 +103,22 @@ Once these dependencies have been installed, you can continue with the dataset p
 
 TODO
 
+#### Dataset download
+
+Download the dataset in the [official nuScenes dataset website](https://www.nuscenes.org/nuscenes#download). After registering in the website, you need to download the `Full dataset (v1.0)` and `nuScenes-lidarseg`. Put all downloaded files in the `<nuscenes_path>`.
+
+#### Dataset preparation
+
+After downloading, it is necessary to run the dataset preparation script to be able to run the detection models on the nuScenes data. To do so, execute the following command:
+
+```
+python tools/create_data.py nuscenes --root-path ./data/nuscenes --out-dir ./data/nuscenes --extra-tag nuscenes
+```
+
+#### Generate or download BGFG labels
+
+TODO
+
 ### 3. Filtered point clouds generation
 
 TODO
