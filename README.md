@@ -125,7 +125,176 @@ TODO
 
 ### 4. 3D detection models training
 
-TODO
+<table>
+  <thead>
+    <tr>
+      <th>Model name</th>
+      <th>mAP</th>
+      <th>NDS</th>
+      <th>FLOPS (GFLOPS)</th>
+      <th>Train command</th>
+      <th>Model weights</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BEVFusion-L</td>
+      <td>0.643</td>
+      <td>0.691</td>
+      <td>246.09</td>
+      <td>
+        python tools/train.py
+        <a href="bg_gt_filter/configs/nuscenes/bevfusion_lidar/bevfusion_lidar.py">
+          bg_gt_filter/configs/nuscenes/bevfusion_lidar/bevfusion_lidar.py
+        </a>
+      </td>
+      <td>Download</td>
+    </tr>
+    <tr>
+      <td>BEVFusion-L*</td>
+      <td>0.672</td>
+      <td>0.704</td>
+      <td>185.67</td>
+      <td>
+        python tools/train.py
+        <a href="bg_gt_filter/configs/nuscenes/bevfusion_lidar/bevfusion_lidar_gt_filter.py">
+          bg_gt_filter/configs/nuscenes/bevfusion_lidar/bevfusion_lidar_gt_filter.py
+        </a>
+      </td>
+      <td>Download</td>
+    </tr>
+    <tr>
+      <td>BEVFusion-L 3Dh</td>
+      <td>0.639</td>
+      <td>0.691</td>
+      <td>230.48</td>
+      <td>
+        python tools/train.py
+        <a href="bg_gt_filter/configs/nuscenes/bevfusion_lidar_3dh/bevfusion_lidar_3dh.py">
+          bg_gt_filter/configs/nuscenes/bevfusion_lidar_3dh/bevfusion_lidar_3dh.py
+        </a>
+      </td>
+      <td>Download</td>
+    </tr>
+    <tr>
+      <td>BEVFusion-L 3Dh*</td>
+      <td>0.666</td>
+      <td>0.702</td>
+      <td>113.65</td>
+      <td>
+        python tools/train.py
+        <a href="bg_gt_filter/configs/nuscenes/bevfusion_lidar_3dh/bevfusion_lidar_3dh_gt_filter.py">
+          bg_gt_filter/configs/nuscenes/bevfusion_3dh/bevfusion_lidar_3dh_gt_filter.py
+        </a>
+      </td>
+      <td>Download</td>
+    </tr>
+    <tr>
+      <td>CenterPoint-Voxel</td>
+      <td>0.557</td>
+      <td>0.642</td>
+      <td>163.53</td>
+      <td>
+        python tools/train.py
+        <a href="bg_gt_filter/configs/nuscenes/centerpoint_voxel/centerpoint_voxel.py">
+          bg_gt_filter/configs/nuscenes/centerpoint_voxel/centerpoint_voxel.py
+        </a>
+      </td>
+      <td>Download</td>
+    </tr>
+    <tr>
+      <td>CenterPoint-Voxel*</td>
+      <td>0.612</td>
+      <td>0.669</td>
+      <td>121.62</td>
+      <td>
+        python tools/train.py
+        <a href="bg_gt_filter/configs/nuscenes/centerpoint_voxel/centerpoint_voxel_gt_filter.py">
+          bg_gt_filter/configs/nuscenes/centerpoint_voxel/centerpoint_voxel_gt_filter.py
+        </a>
+      </td>
+      <td>Download</td>
+    </tr>
+    <tr>
+      <td>CenterPoint-Pillar</td>
+      <td>0.482</td>
+      <td>0.593</td>
+      <td>127.86</td>
+      <td>
+        python tools/train.py
+        <a href="bg_gt_filter/configs/nuscenes/centerpoint_pillar/centerpoint_pillar.py">
+          bg_gt_filter/configs/nuscenes/centerpoint_pillar/centerpoint_pillar.py
+        </a>
+      </td>
+      <td>Download</td>
+    </tr>
+    <tr>
+      <td>CenterPoint-Pillar*</td>
+      <td>0.576</td>
+      <td>0.645</td>
+      <td>127.25</td>
+      <td>
+        python tools/train.py
+        <a href="bg_gt_filter/configs/nuscenes/centerpoint_pillar/centerpoint_pillar_gt_filter.py">
+          bg_gt_filter/configs/nuscenes/centerpoint_pillar/centerpoint_pillar_gt_filter.py
+        </a>
+      </td>
+      <td>Download</td>
+    </tr>
+    <tr>
+      <td>SSN</td>
+      <td>0.461</td>
+      <td>0.579</td>
+      <td>237.34</td>
+      <td>
+        python tools/train.py
+        <a href="bg_gt_filter/configs/nuscenes/ssn_regnext/ssn_regnext.py">
+          bg_gt_filter/configs/nuscenes/ssn_regnext/ssn_regnext.py
+        </a>
+      </td>
+      <td>Download</td>
+    </tr>
+    <tr>
+      <td>SSN*</td>
+      <td>0.558</td>
+      <td>0.635</td>
+      <td>231.96</td>
+      <td>
+        python tools/train.py
+        <a href="bg_gt_filter/configs/nuscenes/ssn_regnext/ssn_regnext_gt_filter.py">
+          bg_gt_filter/configs/nuscenes/ssn_regnext/ssn_regnext_gt_filter.py
+        </a>
+      </td>
+      <td>Download</td>
+    </tr>
+    <tr>
+      <td>PointPillars</td>
+      <td>0.391</td>
+      <td>0.527</td>
+      <td>130.15</td>
+      <td>
+        python tools/train.py
+        <a href="bg_gt_filter/configs/nuscenes/pointpillars/pointpillars.py">
+          bg_gt_filter/configs/nuscenes/pointpillars/pointpillars.py
+        </a>
+      </td>
+      <td>Download</td>
+    </tr>
+    <tr>
+      <td>PointPillars*</td>
+      <td>0.503</td>
+      <td>0.586</td>
+      <td>112.92</td>
+      <td>
+        python tools/train.py
+        <a href="bg_gt_filter/configs/nuscenes/pointpillars/pointpillars_gt_filter.py">
+          bg_gt_filter/configs/nuscenes/pointpillars/pointpillars_gt_filter.py
+        </a>
+      </td>
+      <td>Download</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 5. 3D detection models evaluation
 
