@@ -126,7 +126,7 @@ A typical directory structure should look similar to:
 ```
 
 
-#### Dataset preparation
+#### MMDetection3D Dataset preparation
 
 After downloading, it is necessary to run the MMDetection3D dataset preparation script to be able to run the detection models on the nuScenes data. To do so, execute the following command:
 
@@ -152,13 +152,26 @@ This script can be excecuted by running the below command:
 python /mmdetection3d/bg_gt_filter/scripts/generate_bgfg_labels.py
 ```
 
-Once completed, the generated BGFG labels will be available for the following stages of the pipeline.
+#### Generate filtered point clouds 
 
-### 3. Filtered point clouds generation
+The final preprocessing step generates the ground-truth (oracle) filtered point clouds used by the detection pipeline.
 
-TODO
+During this process, voxels containing only background (BG) points are removed, while voxels containing at least one foreground (FG) point are preserved. Filtered point clouds are generated for multiple voxel sizes, allowing different amounts of background context to be retained around foreground objects. Larger voxel sizes preserve more surrounding context, whereas smaller voxel sizes produce more aggressive filtering.
 
-### 4. 3D detection models training
+To support the configurations used by different detection models, filtered point clouds are generated for:
+
+* 9 concatenated LiDAR sweeps, used by BEVFusion and CenterPoint.
+* 10 concatenated LiDAR sweeps, used by SSN and PointPillars.
+
+Run the preprocessing script with:
+
+```
+python /mmdetection3d/bg_gt_filter/scripts/generate_filtered_pcds.py
+```
+
+After completion, the filtered point clouds will be available for training and evaluating the supported detection models.
+
+### 3. 3D detection models training
 
 <table>
   <thead>
@@ -331,11 +344,11 @@ TODO
   </tbody>
 </table>
 
-### 5. 3D detection models evaluation
+### 4. 3D detection models evaluation
 
 TODO
 
-### 6. Plots and tables generation
+### 5. Plots and tables generation
 
 TODO
 
