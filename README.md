@@ -173,7 +173,7 @@ After completion, the filtered point clouds will be available for training and e
 
 ### 3. 3D detection models training
 
-After completing the dataset preparation steps, the detection models can be trained. The table below lists the training command for each model, the expected performance in terms of mAP and NDS, and a link to download the pre-trained model weights. Using the provided checkpoints allows you to skip the training step if desired.
+After completing the dataset preparation steps, the detection models can be trained. The table below lists the training command for each model, the expected performance in terms of mAP and NDS, and a link to download the pre-trained model weights. You can also download all models at once from the [Google Drive repository](https://drive.google.com/drive/folders/1lWZ-dzLbcSkc8kRO6KSMVNR6_axeeErC?usp=drive_link). Using the provided checkpoints allows you to skip the training step if desired.
 
 Models marked with * are trained using the ground-truth filtered point clouds, while the remaining models are trained using the original (raw) point clouds.
 
@@ -192,7 +192,7 @@ Models marked with * are trained using the ground-truth filtered point clouds, w
       <td>BEVFusion-L</td>
       <td>0.643</td>
       <td>0.691</td>
-      <td>Download</td>
+      <td><a href="https://drive.google.com/file/d/1uGRxII2Vu2XoiXDIehXfzHHV9N2Var_L/view?usp=drive_link">Download</a></td>
       <td>
         python tools/train.py
         <a href="bg_gt_filter/configs/nuscenes/bevfusion_lidar/bevfusion_lidar.py">
@@ -204,7 +204,7 @@ Models marked with * are trained using the ground-truth filtered point clouds, w
       <td>BEVFusion-L*</td>
       <td>0.672</td>
       <td>0.704</td>
-      <td>Download</td>
+      <td><a href="https://drive.google.com/file/d/14ZD-TbAh6x1WnAEZkfTrgik05TCGooQf/view?usp=drive_link">Download</a></td>
       <td>
         python tools/train.py
         <a href="bg_gt_filter/configs/nuscenes/bevfusion_lidar/bevfusion_lidar_gt_filter.py">
@@ -216,7 +216,7 @@ Models marked with * are trained using the ground-truth filtered point clouds, w
       <td>BEVFusion-L 3Dh</td>
       <td>0.639</td>
       <td>0.691</td>
-      <td>Download</td>
+      <td><a href="https://drive.google.com/file/d/1-usJ6g4i_l2NuStbhg8lWS1yYAlK83h7/view?usp=drive_link">Download</a></td>
       <td>
         python tools/train.py
         <a href="bg_gt_filter/configs/nuscenes/bevfusion_lidar_3dh/bevfusion_lidar_3dh.py">
@@ -228,7 +228,7 @@ Models marked with * are trained using the ground-truth filtered point clouds, w
       <td>BEVFusion-L 3Dh*</td>
       <td>0.666</td>
       <td>0.702</td>
-      <td>Download</td>
+      <td><a href="https://drive.google.com/file/d/19-q0Bqq_bEYS4WTKvVty4LLHB16lFVpx/view?usp=drive_link">Download</a></td>
       <td>
         python tools/train.py
         <a href="bg_gt_filter/configs/nuscenes/bevfusion_lidar_3dh/bevfusion_lidar_3dh_gt_filter.py">
@@ -240,7 +240,7 @@ Models marked with * are trained using the ground-truth filtered point clouds, w
       <td>CenterPoint-Voxel</td>
       <td>0.557</td>
       <td>0.642</td>
-      <td>Download</td>
+      <td><a href="https://drive.google.com/file/d/1drxzCyLrkG_CGK7Xty4YU7H9JXhqgDJQ/view?usp=drive_link">Download</a></td>
       <td>
         python tools/train.py
         <a href="bg_gt_filter/configs/nuscenes/centerpoint_voxel/centerpoint_voxel.py">
@@ -252,7 +252,7 @@ Models marked with * are trained using the ground-truth filtered point clouds, w
       <td>CenterPoint-Voxel*</td>
       <td>0.612</td>
       <td>0.669</td>
-      <td>Download</td>
+      <td><a href="https://drive.google.com/file/d/1oNA1s6tuBXMQUKTQKJIEqg5uaYgB8zR1/view?usp=drive_link">Download</a></td>
       <td>
         python tools/train.py
         <a href="bg_gt_filter/configs/nuscenes/centerpoint_voxel/centerpoint_voxel_gt_filter.py">
@@ -264,7 +264,7 @@ Models marked with * are trained using the ground-truth filtered point clouds, w
       <td>CenterPoint-Pillar</td>
       <td>0.482</td>
       <td>0.593</td>
-      <td>Download</td>
+      <td><a href="https://drive.google.com/file/d/1L6A-q7TTmfRA9v5WgTenzwC9fAnsdFir/view?usp=drive_link">Download</a></td>
       <td>
         python tools/train.py
         <a href="bg_gt_filter/configs/nuscenes/centerpoint_pillar/centerpoint_pillar.py">
@@ -276,7 +276,7 @@ Models marked with * are trained using the ground-truth filtered point clouds, w
       <td>CenterPoint-Pillar*</td>
       <td>0.576</td>
       <td>0.645</td>
-      <td>Download</td>
+      <td><a href="https://drive.google.com/file/d/1WGwpBjI_a7mWmAjlf19fNU1SrEYi8wEO/view?usp=drive_link">Download</a></td>
       <td>
         python tools/train.py
         <a href="bg_gt_filter/configs/nuscenes/centerpoint_pillar/centerpoint_pillar_gt_filter.py">
@@ -288,7 +288,7 @@ Models marked with * are trained using the ground-truth filtered point clouds, w
       <td>SSN</td>
       <td>0.461</td>
       <td>0.579</td>
-      <td>Download</td>
+      <td><a href="https://drive.google.com/file/d/1qGIGJeNxW4d_mP_M1u4y0BsavrrtSeRk/view?usp=drive_link">Download</a></td>
       <td>
         python tools/train.py
         <a href="bg_gt_filter/configs/nuscenes/ssn_regnext/ssn_regnext.py">
@@ -300,7 +300,7 @@ Models marked with * are trained using the ground-truth filtered point clouds, w
       <td>SSN*</td>
       <td>0.558</td>
       <td>0.635</td>
-      <td>Download</td>
+      <td><a href="https://drive.google.com/file/d/1i3o64fk8H7VVAbIPOoKIgeiEyaFlzBet/view?usp=drive_link">Download</a></td>
       <td>
         python tools/train.py
         <a href="bg_gt_filter/configs/nuscenes/ssn_regnext/ssn_regnext_gt_filter.py">
@@ -312,7 +312,7 @@ Models marked with * are trained using the ground-truth filtered point clouds, w
       <td>PointPillars</td>
       <td>0.391</td>
       <td>0.527</td>
-      <td>Download</td>
+      <td><a href="https://drive.google.com/file/d/11INslUOu_6cv2RFKYdWneWsUXLQWrh-w/view?usp=drive_link">Download</a></td>
       <td>
         python tools/train.py
         <a href="bg_gt_filter/configs/nuscenes/pointpillars/pointpillars.py">
@@ -324,7 +324,7 @@ Models marked with * are trained using the ground-truth filtered point clouds, w
       <td>PointPillars*</td>
       <td>0.503</td>
       <td>0.586</td>
-      <td>Download</td>
+      <td><a href="https://drive.google.com/file/d/10f0OvLlBC_Fbx--uIx3O_3eVxL55daAS/view?usp=drive_link">Download</a></td>
       <td>
         python tools/train.py
         <a href="bg_gt_filter/configs/nuscenes/pointpillars/pointpillars_gt_filter.py">
