@@ -173,13 +173,16 @@ After completion, the filtered point clouds will be available for training and e
 
 ### 3. 3D detection models training
 
+After completing the dataset preparation steps, the detection models can be trained. The table below lists the training command for each model, the expected performance in terms of mAP and NDS, and a link to download the pre-trained model weights. Using the provided checkpoints allows you to skip the training step if desired.
+
+Models marked with * are trained using the ground-truth filtered point clouds, while the remaining models are trained using the original (raw) point clouds.
+
 <table>
   <thead>
     <tr>
       <th>Model name</th>
       <th>mAP</th>
       <th>NDS</th>
-      <th>FLOPS (GFLOPS)</th>
       <th>Model weights</th>
       <th>Train command</th>
     </tr>
@@ -189,7 +192,6 @@ After completion, the filtered point clouds will be available for training and e
       <td>BEVFusion-L</td>
       <td>0.643</td>
       <td>0.691</td>
-      <td>246.09</td>
       <td>Download</td>
       <td>
         python tools/train.py
@@ -202,7 +204,6 @@ After completion, the filtered point clouds will be available for training and e
       <td>BEVFusion-L*</td>
       <td>0.672</td>
       <td>0.704</td>
-      <td>185.67</td>
       <td>Download</td>
       <td>
         python tools/train.py
@@ -215,7 +216,6 @@ After completion, the filtered point clouds will be available for training and e
       <td>BEVFusion-L 3Dh</td>
       <td>0.639</td>
       <td>0.691</td>
-      <td>230.48</td>
       <td>Download</td>
       <td>
         python tools/train.py
@@ -228,7 +228,6 @@ After completion, the filtered point clouds will be available for training and e
       <td>BEVFusion-L 3Dh*</td>
       <td>0.666</td>
       <td>0.702</td>
-      <td>113.65</td>
       <td>Download</td>
       <td>
         python tools/train.py
@@ -241,7 +240,6 @@ After completion, the filtered point clouds will be available for training and e
       <td>CenterPoint-Voxel</td>
       <td>0.557</td>
       <td>0.642</td>
-      <td>163.53</td>
       <td>Download</td>
       <td>
         python tools/train.py
@@ -254,7 +252,6 @@ After completion, the filtered point clouds will be available for training and e
       <td>CenterPoint-Voxel*</td>
       <td>0.612</td>
       <td>0.669</td>
-      <td>121.62</td>
       <td>Download</td>
       <td>
         python tools/train.py
@@ -267,7 +264,6 @@ After completion, the filtered point clouds will be available for training and e
       <td>CenterPoint-Pillar</td>
       <td>0.482</td>
       <td>0.593</td>
-      <td>127.86</td>
       <td>Download</td>
       <td>
         python tools/train.py
@@ -280,7 +276,6 @@ After completion, the filtered point clouds will be available for training and e
       <td>CenterPoint-Pillar*</td>
       <td>0.576</td>
       <td>0.645</td>
-      <td>127.25</td>
       <td>Download</td>
       <td>
         python tools/train.py
@@ -293,7 +288,6 @@ After completion, the filtered point clouds will be available for training and e
       <td>SSN</td>
       <td>0.461</td>
       <td>0.579</td>
-      <td>237.34</td>
       <td>Download</td>
       <td>
         python tools/train.py
@@ -306,7 +300,6 @@ After completion, the filtered point clouds will be available for training and e
       <td>SSN*</td>
       <td>0.558</td>
       <td>0.635</td>
-      <td>231.96</td>
       <td>Download</td>
       <td>
         python tools/train.py
@@ -319,7 +312,6 @@ After completion, the filtered point clouds will be available for training and e
       <td>PointPillars</td>
       <td>0.391</td>
       <td>0.527</td>
-      <td>130.15</td>
       <td>Download</td>
       <td>
         python tools/train.py
@@ -332,7 +324,6 @@ After completion, the filtered point clouds will be available for training and e
       <td>PointPillars*</td>
       <td>0.503</td>
       <td>0.586</td>
-      <td>112.92</td>
       <td>Download</td>
       <td>
         python tools/train.py
@@ -343,6 +334,13 @@ After completion, the filtered point clouds will be available for training and e
     </tr>
   </tbody>
 </table>
+
+After either training the models or downloading the pre-trained checkpoints, organize the model weights using the following directory structure:
+
+* Models trained on raw point clouds: `<models_path>/<model_name>/<model_name>.pth`
+* Models trained on filtered point clouds: `<models_path>/<model_name>/<model_name>_gt_filter.pth`
+
+Maintaining this directory structure ensures that the evaluation and benchmarking scripts can automatically locate the corresponding model checkpoints.
 
 ### 4. 3D detection models evaluation
 
