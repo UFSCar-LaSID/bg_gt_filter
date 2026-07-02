@@ -101,23 +101,58 @@ Once these dependencies have been installed, you can continue with the dataset p
 
 ### 2. Dataset download and preparation
 
-TODO
+This section describes how to download, prepare, and preprocess the nuScenes dataset before running the detection pipeline. These steps ensure that the dataset is converted into the format expected by the framework.
 
 #### Dataset download
 
-Download the dataset in the [official nuScenes dataset website](https://www.nuscenes.org/nuscenes#download). After registering in the website, you need to download the `Full dataset (v1.0)` and `nuScenes-lidarseg`. Put all downloaded files in the `<nuscenes_path>`.
+The project uses the nuScenes v1.0 Full Dataset together with the nuScenes LiDAR Segmentation (lidarseg) annotations. Follow the instructions below to install the dataset:
+
+1. Create an account and log in to the [official nuScenes website](https://www.nuscenes.org/nuscenes#download).
+2. Download the following packages:
+    * Full dataset (v1.0)
+    * nuScenes-lidarseg
+3. Extract all downloaded files into the dataset root directory `<nuscenes_path>`
+
+A typical directory structure should look similar to:
+
+```
+<nuscenes_path>/
+├── maps/
+├── samples/
+├── sweeps/
+├── lidarseg/
+├── v1.0-trainval/
+└── v1.0-test/
+```
+
 
 #### Dataset preparation
 
-After downloading, it is necessary to run the dataset preparation script to be able to run the detection models on the nuScenes data. To do so, execute the following command:
+After downloading, it is necessary to run the MMDetection3D dataset preparation script to be able to run the detection models on the nuScenes data. To do so, execute the following command:
 
 ```
-python tools/create_data.py nuscenes --root-path ./data/nuscenes --out-dir ./data/nuscenes --extra-tag nuscenes
+python tools/create_data.py nuscenes \
+    --root-path ./data/nuscenes \
+    --out-dir ./data/nuscenes \
+    --extra-tag nuscenes
 ```
 
-#### Generate or download BGFG labels
+#### Generate background/foreground (BGFG) labels
 
-TODO
+After preparing the dataset, an additional preprocessing step is required to generate background (BG) and foreground (FG) labels used by the subsequent pipeline stages.
+
+This script:
+
+* Converts the original semantic labels into two classes: background (BG) and foreground (FG).
+* Generates BGFG labels for non-keyframe LiDAR sweeps by propagating labels from the nearest temporal keyframes using a K-Nearest Neighbors (KNN) approach.
+
+This script can be excecuted by running the below command:
+
+```
+python /mmdetection3d/bg_gt_filter/scripts/generate_bgfg_labels.py
+```
+
+Once completed, the generated BGFG labels will be available for the following stages of the pipeline.
 
 ### 3. Filtered point clouds generation
 
