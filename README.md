@@ -337,8 +337,8 @@ Models marked with * are trained using the ground-truth filtered point clouds, w
 
 After either training the models or downloading the pre-trained checkpoints, organize the model weights using the following directory structure:
 
-* Models trained on raw point clouds: `<models_path>/<model_name>/<model_name>.pth`
-* Models trained on filtered point clouds: `<models_path>/<model_name>/<model_name>_gt_filter.pth`
+* Models trained on raw point clouds: `<models_path>/nuscenes/<model_name>/<model_name>.pth`
+* Models trained on filtered point clouds: `<models_path>/nuscenes/<model_name>/<model_name>_gt_filter.pth`
 
 Maintaining this directory structure ensures that the evaluation and benchmarking scripts can automatically locate the corresponding model checkpoints.
 
