@@ -344,7 +344,30 @@ Maintaining this directory structure ensures that the evaluation and benchmarkin
 
 ### 4. 3D detection models evaluation
 
-TODO
+The evaluation protocol assesses the detection models under different input configurations to measure the impact of background filtering on detection performance, computational cost, inference speed, and environmental impact.
+
+The following evaluation scenarios are considered:
+
+* **Original model performance**: a model trained on the **raw point clouds** is evaluated using the **raw point clouds**. This serves as the baseline for comparison.
+
+* **Ground-truth (GT) filtered model performance**: a model trained on the **ground-truth filtered point clouds** is evaluated using the corresponding **filtered point clouds** (1x voxel size). Comparing these results with the baseline quantifies the effect of training and evaluating with filtered data.
+
+* **Original model with progressive context removal**: the model trained on the **raw point clouds** is evaluated using filtered point clouds generated with different voxel sizes (1x, 2x, 4x, 8x, 16x, and 32x). Larger voxel sizes preserve more background context around foreground objects, allowing the analysis of how surrounding context influences the model's detection performance.
+
+For each evaluation scenario, the following metrics are reported:
+
+* **mAP** and **NDS**: detection accuracy metrics.
+* **GFLOPs** and **Memory (GB)**: computational complexity and GPU memory usage during inference.
+* **FPS@1** and **FPS@5**: inference throughput measured with batch sizes of 1 and 5, respectively. **FPS@1** represents real-time inference performance, while **FPS@5** provides a better indication of throughput for offline processing and evaluation.
+* **CO₂ (g)**: estimated carbon emissions associated with model inference, providing an indication of the environmental impact of each configuration.
+
+To evaluate all supported models across all scenarios, run:
+
+```
+python /mmdetection3d/bg_gt_filter/scripts/evaluate.py
+```
+
+All results will be saved at `/mmdetection3d/evaluate_results` (can be modified with the `--results_output_dir` arg).
 
 ### 5. Plots and tables generation
 
