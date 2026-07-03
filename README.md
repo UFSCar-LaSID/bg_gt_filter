@@ -173,9 +173,17 @@ After completion, the filtered point clouds will be available for training and e
 
 ### 3. 3D detection models training
 
-After completing the dataset preparation steps, the detection models can be trained. The table below lists the training command for each model, the expected performance in terms of mAP and NDS, and a link to download the pre-trained model weights. You can also download all models at once from the [Google Drive repository](https://drive.google.com/drive/folders/1lWZ-dzLbcSkc8kRO6KSMVNR6_axeeErC?usp=drive_link). Using the provided checkpoints allows you to skip the training step if desired.
+You can also download all models at once from the [Google Drive repository](https://drive.google.com/drive/folders/1zl_Fu8xRh9wkrevf-Lmd2_YI9t51H_A7?usp=drive_link). Using the provided checkpoints allows you to skip the training step if desired. It is also possible to download all model weights with the following commands (download them inside `<models_path>`):
 
-Models marked with * are trained using the ground-truth filtered point clouds, while the remaining models are trained using the original (raw) point clouds.
+```
+pip install gdown
+```
+
+```
+gdown --folder "https://drive.google.com/drive/folders/1zl_Fu8xRh9wkrevf-Lmd2_YI9t51H_A7"
+```
+
+After completing the dataset preparation steps, the detection models can be trained. The table below lists the training command for each model, the expected performance in terms of mAP and NDS, and a link to download the pre-trained model weights. Models marked with * are trained using the ground-truth filtered point clouds, while the remaining models are trained using the original (raw) point clouds. 
 
 <table>
   <thead>
