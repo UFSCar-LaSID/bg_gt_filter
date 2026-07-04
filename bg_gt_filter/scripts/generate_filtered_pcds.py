@@ -144,7 +144,7 @@ if __name__ == '__main__':
         pts_instance_mask=lidarseg_prefix,
     )
 
-    def generate_dataloader_config(pipeline):
+    def generate_dataloader_config(pipeline, ann_posfix):
         return dict(
             batch_size=1,
             num_workers=0,
@@ -154,7 +154,7 @@ if __name__ == '__main__':
             dataset=dict(
                 type='NuScenesSegDataset',
                 data_root=data_root,
-                ann_file='nuscenes_infos_val.pkl',
+                ann_file=f'nuscenes_infos_{ann_posfix}.pkl',
                 pipeline=pipeline,
                 metainfo=metainfo,
                 modality=dict(use_lidar=True, use_camera=False),
@@ -165,8 +165,20 @@ if __name__ == '__main__':
                 backend_args=backend_args)
         )
 
-    dataloader_config_9_sweeps = generate_dataloader_config(pipeline_9_sweeps)
-    dataloader_config_10_sweeps = generate_dataloader_config(pipeline_10_sweeps)
+    val_dataloader_config_9_sweeps = generate_dataloader_config(pipeline_9_sweeps, 'val')
+    val_dataloader_config_10_sweeps = generate_dataloader_config(pipeline_10_sweeps, 'val')
+
+    generate_filtered_clouds(
+        new_data_path=os.path.join(args.output_dir, 'LIDAR_TOP_GT_FILTERED_9_sweeps_1x_voxel'),
+        multiplier=1,
+        dataloader_config=generate_dataloader_config(pipeline_9_sweeps, 'train')
+    )
+
+    generate_filtered_clouds(
+        new_data_path=os.path.join(args.output_dir, 'LIDAR_TOP_GT_FILTERED_10_sweeps_1x_voxel'),
+        multiplier=1,
+        dataloader_config=generate_dataloader_config(pipeline_10_sweeps, 'train')
+    )
 
     results_9_sweeps = {}
     results_10_sweeps = {}
@@ -177,16 +189,16 @@ if __name__ == '__main__':
         results_9_sweeps[str(multiplier)] = generate_filtered_clouds(
             new_data_path=os.path.join(args.output_dir, f'LIDAR_TOP_GT_FILTERED_9_sweeps_{multiplier}x_voxel'),
             multiplier=multiplier,
-            dataloader_config=dataloader_config_9_sweeps
+            dataloader_config=val_dataloader_config_9_sweeps
         )
 
         # It is necessary to overwrite the use_dim every time because the pipeline modifies it in place internally.
         pipeline_10_sweeps[1]['use_dim'] = [0, 1, 2, 4]  
-        dataloader_config_10_sweeps = generate_dataloader_config(pipeline_10_sweeps)
+        val_dataloader_config_10_sweeps = generate_dataloader_config(pipeline_10_sweeps)
         results_10_sweeps[str(multiplier)] = generate_filtered_clouds(
             new_data_path=os.path.join(args.output_dir, f'LIDAR_TOP_GT_FILTERED_10_sweeps_{multiplier}x_voxel'),
             multiplier=multiplier,
-            dataloader_config=dataloader_config_10_sweeps
+            dataloader_config=val_dataloader_config_10_sweeps
         )
     
     results = {
