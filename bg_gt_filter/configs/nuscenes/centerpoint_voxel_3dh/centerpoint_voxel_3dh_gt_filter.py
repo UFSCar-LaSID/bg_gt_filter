@@ -17,7 +17,7 @@ class_names = [
     'motorcycle', 'bicycle', 'pedestrian', 'traffic_cone'
 ]
 data_prefix = dict(
-    pts='samples/LIDAR_TOP_GT_FILTERED_9_sweeps',
+    pts='samples/LIDAR_TOP_GT_FILTERED_9_sweeps_1x_voxel',
     img='', 
     sweeps=''
 )

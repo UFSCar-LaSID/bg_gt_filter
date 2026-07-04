@@ -1,14 +1,14 @@
 _base_ = [
-    '../../../../../configs/_base_/models/pointpillars_hv_fpn_nus.py',
-    '../../../../../configs/_base_/datasets/nus-3d.py',
-    '../../../../../configs/_base_/schedules/schedule-2x.py',
-    '../../../../../configs/_base_/default_runtime.py',
+    '../../../../configs/_base_/models/pointpillars_hv_fpn_nus.py',
+    '../../../../configs/_base_/datasets/nus-3d.py',
+    '../../../../configs/_base_/schedules/schedule-2x.py',
+    '../../../../configs/_base_/default_runtime.py',
 ]
 
 
 data_root = 'data/nuscenes/'
 data_prefix = dict(
-    pts='samples/LIDAR_TOP_GT_FILTERED_10', 
+    pts='samples/LIDAR_TOP_GT_FILTERED_10_sweeps_1x_voxel', 
     img='', 
     sweeps=''
 )

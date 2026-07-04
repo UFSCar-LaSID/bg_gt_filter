@@ -1,8 +1,8 @@
 _base_ = [
-    '../../../../../configs/_base_/models/pointpillars_hv_fpn_nus.py',
-    '../../../../../configs/_base_/datasets/nus-3d.py',
-    '../../../../../configs/_base_/schedules/schedule-2x.py',
-    '../../../../../configs/_base_/default_runtime.py',
+    '../../../../configs/_base_/models/pointpillars_hv_fpn_nus.py',
+    '../../../../configs/_base_/datasets/nus-3d.py',
+    '../../../../configs/_base_/schedules/schedule-2x.py',
+    '../../../../configs/_base_/default_runtime.py',
 ]
 # Note that the order of class names should be consistent with
 # the following anchors' order

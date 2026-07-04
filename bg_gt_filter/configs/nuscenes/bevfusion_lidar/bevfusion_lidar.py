@@ -1,4 +1,4 @@
-_base_ = ['../../../../../configs/_base_/default_runtime.py']
+_base_ = ['../../../../configs/_base_/default_runtime.py']
 custom_imports = dict(
     imports=['projects.BEVFusion.bevfusion'], allow_failed_imports=False)
 
@@ -56,8 +56,7 @@ model = dict(
             voxel_size=[0.075, 0.075, 0.2],
             max_voxels=[120000, 160000],
             voxelize_reduce=True,
-            deterministic=False,
-            filter_bg=False)),
+            deterministic=False)),
     pts_voxel_encoder=dict(type='HardSimpleVFE', num_features=5),
     pts_middle_encoder=dict(
         type='BEVFusionSparseEncoder',

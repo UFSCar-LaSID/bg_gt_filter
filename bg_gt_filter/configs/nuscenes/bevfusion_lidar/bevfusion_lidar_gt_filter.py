@@ -1,4 +1,4 @@
-_base_ = ['../../../../../configs/_base_/default_runtime.py']
+_base_ = ['../../../../configs/_base_/default_runtime.py']
 custom_imports = dict(
     imports=['projects.BEVFusion.bevfusion'], allow_failed_imports=False)
 
@@ -19,7 +19,7 @@ dataset_type = 'NuScenesSegDataset'  # New
 lidarseg_prefix = 'lidarseg_bgfg/v1.0-trainval'  # New
 data_root = '/mmdetection3d/data/nuscenes/'
 data_prefix = dict(
-    pts='samples/LIDAR_TOP_GT_FILTERED_v3',
+    pts='samples/LIDAR_TOP_GT_FILTERED_9_sweeps_1x_voxel',
     CAM_FRONT='samples/CAM_FRONT',
     CAM_FRONT_LEFT='samples/CAM_FRONT_LEFT',
     CAM_FRONT_RIGHT='samples/CAM_FRONT_RIGHT',
@@ -56,8 +56,7 @@ model = dict(
             voxel_size=[0.075, 0.075, 0.2],
             max_voxels=[120000, 160000],
             voxelize_reduce=True,
-            deterministic=False,
-            filter_bg=False)),
+            deterministic=False)),
     pts_voxel_encoder=dict(type='HardSimpleVFE', num_features=5),
     pts_middle_encoder=dict(
         type='BEVFusionSparseEncoder',

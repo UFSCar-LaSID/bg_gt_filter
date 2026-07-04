@@ -1,8 +1,8 @@
 _base_ = [
-    '../../../../../configs/_base_/datasets/nus-3d.py',
-    '../../../../../configs/_base_/models/centerpoint_voxel01_second_secfpn_nus.py',
-    '../../../../../configs/_base_/schedules/cyclic-20e.py', 
-    '../../../../../configs/_base_/default_runtime.py'
+    '../../../../configs/_base_/datasets/nus-3d.py',
+    '../../../../configs/_base_/models/centerpoint_voxel01_second_secfpn_nus.py',
+    '../../../../configs/_base_/schedules/cyclic-20e.py', 
+    '../../../../configs/_base_/default_runtime.py'
 ]
 
 # If point cloud range is changed, the models should also change their point
