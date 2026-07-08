@@ -34,7 +34,13 @@ Below we present the main results of our study. A more comprehensive analysis is
 
 ## Reproducing our results
 
-TODO
+This section describes the complete pipeline required to reproduce the experiments presented in this work. The process consists of five stages:
+
+1. **Package installation**: Set up the required software environment by installing MMDetection3D and all project dependencies, either using Docker (recommended) or a local installation.
+2. **Dataset download and preparation**: Download the nuScenes dataset, prepare it for MMDetection3D, generate background/foreground labels, and create the oracle-filtered point clouds used throughout the experiments.
+3. **3D detection models training**: Train all supported detection models on either the original or the filtered point clouds, or alternatively download the provided pre-trained checkpoints.
+4. **3D detection models evaluation**: Evaluate the trained models under multiple input configurations to measure the effects of background filtering on detection accuracy, computational cost, inference speed, memory usage, and estimated carbon emissions.
+5. **Plots and tables generation**: Generate all figures and tables presented in the paper from the evaluation results using the provided Jupyter notebook.
 
 ### 1. Packages Installation
 
