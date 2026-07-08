@@ -367,11 +367,13 @@ To evaluate all supported models across all scenarios, run:
 python /mmdetection3d/bg_gt_filter/scripts/evaluate.py
 ```
 
-All results will be saved at `/mmdetection3d/evaluate_results` (can be modified with the `--results_output_dir` arg).
+All results will be saved at `/mmdetection3d/results` (can be modified with the `--results_output_dir` arg).
 
 ### 5. Plots and tables generation
 
-TODO
+After completing the evaluation, generate the figures and tables used in the analysis by executing all cells in the [`plots_and_tables.ipynb`](bg_gt_filter/scripts/plots_and_tables.ipynb) Jupyter notebook.
+
+The notebook automatically loads the evaluation results from the specified output directory, computes the required statistics, and generates all plots and tables presented in the [results page](README_results.md). Ensure that the evaluation has been completed successfully and that the results are available in the expected location before running the notebook. By default, the notebook reads the results from `/mmdetection3d/results`. If the evaluation results are stored in a different directory, update the corresponding path in the notebook before execution. The tables and plots will be saved in `/mmdetection3d/plots_and_tables` (which can be configured by the `plots_and_tables_dir` variable).
 
 ## Citation
 
