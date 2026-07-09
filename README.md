@@ -34,7 +34,13 @@ Below we present the main results of our study. A more comprehensive analysis is
 
 ## Reproducing our results
 
-TODO
+This section describes the complete pipeline required to reproduce the experiments presented in this work. The process consists of five stages:
+
+1. **Package installation**: Set up the required software environment by installing MMDetection3D and all project dependencies, either using Docker (recommended) or a local installation.
+2. **Dataset download and preparation**: Download the nuScenes dataset, prepare it for MMDetection3D, generate background/foreground labels, and create the oracle-filtered point clouds used throughout the experiments.
+3. **3D detection models training**: Train all supported detection models on either the original or the filtered point clouds, or alternatively download the provided pre-trained checkpoints.
+4. **3D detection models evaluation**: Evaluate the trained models under multiple input configurations to measure the effects of background filtering on detection accuracy, computational cost, inference speed, memory usage, and estimated carbon emissions.
+5. **Plots and tables generation**: Generate all figures and tables presented in the paper from the evaluation results using the provided Jupyter notebook.
 
 ### 1. Packages Installation
 
@@ -367,11 +373,13 @@ To evaluate all supported models across all scenarios, run:
 python /mmdetection3d/bg_gt_filter/scripts/evaluate.py
 ```
 
-All results will be saved at `/mmdetection3d/evaluate_results` (can be modified with the `--results_output_dir` arg).
+All results will be saved at `/mmdetection3d/results` (can be modified with the `--results_output_dir` arg).
 
 ### 5. Plots and tables generation
 
-TODO
+After completing the evaluation, generate the figures and tables used in the analysis by executing all cells in the [`plots_and_tables.ipynb`](bg_gt_filter/scripts/plots_and_tables.ipynb) Jupyter notebook.
+
+The notebook automatically loads the evaluation results from the specified output directory, computes the required statistics, and generates all plots and tables presented in the [results page](README_results.md). Ensure that the evaluation has been completed successfully and that the results are available in the expected location before running the notebook. By default, the notebook reads the results from `/mmdetection3d/results`. If the evaluation results are stored in a different directory, update the corresponding path in the notebook before execution. The tables and plots will be saved in `/mmdetection3d/plots_and_tables` (which can be configured by the `plots_and_tables_dir` variable).
 
 ## Citation
 
