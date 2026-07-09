@@ -41,7 +41,7 @@ model = dict(
         norm_cfg=dict(type='BN', eps=1e-3, momentum=0.01),
         conv_cfg=dict(type='Conv2d', bias=False)),
     data_preprocessor=dict(
-        voxel_layer=dict(point_cloud_range=point_cloud_range)),
+        voxel_layer=dict(point_cloud_range=point_cloud_range, deterministic=False)),
     pts_bbox_head=dict(bbox_coder=dict(pc_range=point_cloud_range[:2])),
     # model training and testing settings
     train_cfg=dict(pts=dict(point_cloud_range=point_cloud_range)),
