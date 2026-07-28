@@ -1090,3 +1090,75 @@ All results obtained by our work is shown below. To reproduce these results, fol
 </table>
 
 <em>Average Precision (AP) at threshold 4.0m results for each class and model. Values in parentheses indicate the percentage improvement over the unfiltered baseline. Models marked with * are trained and evaluated using filtered point clouds.</em>
+
+## Model degradation by increasing levels of BG removal by class and AP threhold
+
+<table>
+  <tbody>
+    <tr>
+      <td>0.5m</td>
+      <td><a href="/figs/ap_classes_plots/car_0.5.svg">Car</a></td>
+      <td><a href="/figs/ap_classes_plots/pedestrian_0.5.svg">Ped.</a></td>
+      <td><a href="/figs/ap_classes_plots/motorcycle_0.5.svg">Mot.</a></td>
+      <td><a href="/figs/ap_classes_plots/bicycle_0.5.svg">Bic.</a></td>
+      <td><a href="/figs/ap_classes_plots/truck_0.5.svg">Truck</a></td>
+      <td><a href="/figs/ap_classes_plots/bus_0.5.svg">Bus</a></td>
+      <td><a href="/figs/ap_classes_plots/trailer_0.5.svg">Trailer</a></td>
+      <td><a href="/figs/ap_classes_plots/construction_vehicle_0.5.svg">Const.</a></td>
+      <td><a href="/figs/ap_classes_plots/traffic_cone_0.5.svg">Cone</a></td>
+      <td><a href="/figs/ap_classes_plots/barrier_0.5.svg">Barrier</a></td>
+    </tr>
+    <tr>
+      <td>1.0m</td>
+      <td><a href="/figs/ap_classes_plots/car_1.0.svg">Car</a></td>
+      <td><a href="/figs/ap_classes_plots/pedestrian_1.0.svg">Ped.</a></td>
+      <td><a href="/figs/ap_classes_plots/motorcycle_1.0.svg">Mot.</a></td>
+      <td><a href="/figs/ap_classes_plots/bicycle_1.0.svg">Bic.</a></td>
+      <td><a href="/figs/ap_classes_plots/truck_1.0.svg">Truck</a></td>
+      <td><a href="/figs/ap_classes_plots/bus_1.0.svg">Bus</a></td>
+      <td><a href="/figs/ap_classes_plots/trailer_1.0.svg">Trailer</a></td>
+      <td><a href="/figs/ap_classes_plots/construction_vehicle_1.0.svg">Const.</a></td>
+      <td><a href="/figs/ap_classes_plots/traffic_cone_1.0.svg">Cone</a></td>
+      <td><a href="/figs/ap_classes_plots/barrier_1.0.svg">Barrier</a></td>
+    </tr>
+    <tr>
+      <td>2.0m</td>
+      <td><a href="/figs/ap_classes_plots/car_2.0.svg">Car</a></td>
+      <td><a href="/figs/ap_classes_plots/pedestrian_2.0.svg">Ped.</a></td>
+      <td><a href="/figs/ap_classes_plots/motorcycle_2.0.svg">Mot.</a></td>
+      <td><a href="/figs/ap_classes_plots/bicycle_2.0.svg">Bic.</a></td>
+      <td><a href="/figs/ap_classes_plots/truck_2.0.svg">Truck</a></td>
+      <td><a href="/figs/ap_classes_plots/bus_2.0.svg">Bus</a></td>
+      <td><a href="/figs/ap_classes_plots/trailer_2.0.svg">Trailer</a></td>
+      <td><a href="/figs/ap_classes_plots/construction_vehicle_2.0.svg">Const.</a></td>
+      <td><a href="/figs/ap_classes_plots/traffic_cone_2.0.svg">Cone</a></td>
+      <td><a href="/figs/ap_classes_plots/barrier_2.0.svg">Barrier</a></td>
+    </tr>
+    <tr>
+      <td>4.0m</td>
+      <td><a href="/figs/ap_classes_plots/car_4.0.svg">Car</a></td>
+      <td><a href="/figs/ap_classes_plots/pedestrian_4.0.svg">Ped.</a></td>
+      <td><a href="/figs/ap_classes_plots/motorcycle_4.0.svg">Mot.</a></td>
+      <td><a href="/figs/ap_classes_plots/bicycle_4.0.svg">Bic.</a></td>
+      <td><a href="/figs/ap_classes_plots/truck_4.0.svg">Truck</a></td>
+      <td><a href="/figs/ap_classes_plots/bus_4.0.svg">Bus</a></td>
+      <td><a href="/figs/ap_classes_plots/trailer_4.0.svg">Trailer</a></td>
+      <td><a href="/figs/ap_classes_plots/construction_vehicle_4.0.svg">Const.</a></td>
+      <td><a href="/figs/ap_classes_plots/traffic_cone_4.0.svg">Cone</a></td>
+      <td><a href="/figs/ap_classes_plots/barrier_4.0.svg">Barrier</a></td>
+    </tr>
+    <tr>
+      <td>mean</td>
+      <td><a href="/figs/ap_classes_plots/car_mean.svg">Car</a></td>
+      <td><a href="/figs/ap_classes_plots/pedestrian_mean.svg">Ped.</a></td>
+      <td><a href="/figs/ap_classes_plots/motorcycle_mean.svg">Mot.</a></td>
+      <td><a href="/figs/ap_classes_plots/bicycle_mean.svg">Bic.</a></td>
+      <td><a href="/figs/ap_classes_plots/truck_mean.svg">Truck</a></td>
+      <td><a href="/figs/ap_classes_plots/bus_mean.svg">Bus</a></td>
+      <td><a href="/figs/ap_classes_plots/trailer_mean.svg">Trailer</a></td>
+      <td><a href="/figs/ap_classes_plots/construction_vehicle_mean.svg">Const.</a></td>
+      <td><a href="/figs/ap_classes_plots/traffic_cone_mean.svg">Cone</a></td>
+      <td><a href="/figs/ap_classes_plots/barrier_mean.svg">Barrier</a></td>
+    </tr>
+  </tbody>
+</table>
