@@ -313,6 +313,8 @@ This script can be excecuted by running the below command:
 python /mmdetection3d/bg_gt_filter/scripts/generate_bgfg_labels.py
 ```
 
+OBS: the used BGFG class mapping can be seen in [this code](bg_gt_filter/scripts/generate_bgfg_labels.py#L24-L32).
+
 #### Generate filtered point clouds 
 
 The final preprocessing step generates the ground-truth (oracle) filtered point clouds used by the detection pipeline.
