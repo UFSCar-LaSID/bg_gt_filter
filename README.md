@@ -185,7 +185,7 @@ Below we present the main results of our study. A more comprehensive analysis is
   </tbody>
 </table>
 
-<p><em>Performance results of the models. ↑ indicates that higher values are better and ↓ that lower values are better. Values in parentheses indicate the percentage improvement over the unfiltered baseline. Models marked with $^*$ are trained and evaluated using filtered point clouds. Italic values denote the best overall result and bold the largest percentage improvement.</em></p>
+<p><em>Performance results of the models. ↑ indicates that higher values are better and ↓ that lower values are better. Values in parentheses indicate the percentage improvement over the unfiltered baseline. Models marked with * are trained and evaluated using filtered point clouds. Italic values denote the best overall result and bold the largest percentage improvement.</em></p>
 
 ## Reproducing our results
 
